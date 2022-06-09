@@ -1,14 +1,12 @@
-import datetime
-import hashlib
 import os
-import threading
 import time
-from io import StringIO
-from sqlalchemy import create_engine
-import pandas as pd
-from threading import Thread
-from bestchange_info_unpack import config, db
 import zipfile
+from io import StringIO
+
+import pandas as pd
+from sqlalchemy import create_engine
+
+from bestchange_info_unpack import config, db
 
 
 def city_unpack(archive):
