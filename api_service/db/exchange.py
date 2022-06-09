@@ -7,3 +7,5 @@ async def get_all():
     exchange_list = await cur.fetchall()
     await con.ensure_closed()
     return exchange_list
+
+

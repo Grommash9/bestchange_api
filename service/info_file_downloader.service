@@ -1,0 +1,15 @@
+[Unit]
+Description=info_file_downloader
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/bestchange_api/
+ExecStart=/home/bestchange_api/env/bin/python3 -m info_file_downloader
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
