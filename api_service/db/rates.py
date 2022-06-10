@@ -37,7 +37,8 @@ async def get_all_from_city(city_id):
     con, cur = await create_dict_con()
     await cur.execute("select volume, IF(buy_price != '1', buy_price, sale_price) as price, "
                         'min_order_size, max_order_size, exchange_names.exchange_name as exchange_name, '
-                        "exchange_names.exchange_id as exchange_id, IF(city_id != 0, city_id, null) as city_id, "
+                        "exchange_names.exchange_id as exchange_id, IF(city_id != 0, city_id, null) as city_id,"
+                      "base_currency_name.currency_id as base_currency_id, target_currency_name.currency_currency_idname as target_currency_id, "
                       "base_currency_name.currency_name as base_currency, target_currency_name.currency_name as target_currency, updated_at "
                         'from rates '
                         'join exchange_names '
